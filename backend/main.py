@@ -23,5 +23,5 @@ def generate_prompt():
         else:
             return 'Hello, World!'
     except Exception as e:
-         print(f"An error occurred while storing and loading Chroma DB: {e}")
+         print(f"An error: {e}")
          raise InternalServerError(description="An internal server error occurred")

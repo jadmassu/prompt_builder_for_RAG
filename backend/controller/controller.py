@@ -15,8 +15,10 @@ def controller(prompt):
         sp =split_pdf(loaded_data)
         croma = ChromaDBManager()
         croma.store_and_load_chroma_db(sp)
-        res = croma.search_chroma_db_with_score("what is the name of the grandmother")
-        print ("***********",res)
+        # res = croma.search_chroma_db_with_score("what is the name of the grandmother")
+        croma.createRag()
+        res = croma.invokeRag("what is the name of the grandmother")
+        print("---------",res)
         return res
     except Exception as e:
-        raise RuntimeError(f"An error occurred while storing and loading Chroma DB: {e}")
+        raise RuntimeError(f"error: {e}")

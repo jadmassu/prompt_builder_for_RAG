@@ -22,7 +22,6 @@ def split_pdf(loaded_pdf):
     try:
         # Attempt to split the loaded PDF
         pages = loaded_pdf.load_and_split()
-        print(pages[1])
         return pages
     except Exception as e:
         raise RuntimeError(f"An error occurred while splitting the PDF: {e}")

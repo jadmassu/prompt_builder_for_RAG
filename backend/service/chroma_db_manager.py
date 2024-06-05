@@ -32,6 +32,11 @@ class ChromaDBManager:
         try:
             # Perform similarity search
             docs = self.db.similarity_search_with_score(query)
+            # augmented_input = query + " ".join(retrieved_docs)
+
+            # # Use ChatGPT (or another LLM) to generate response
+            # response = chatgpt.generate(augmented_input) 
+           
             return docs
         except Exception as e:
             raise RuntimeError(f"An error occurred while querying Chroma DB: {e}")
@@ -65,6 +70,14 @@ class ChromaDBManager:
         
     def invokeRag(self, question):
         try:
-            return  self.retriever.invoke(question)
+            res = self.retriever.invoke(question)
+            # retrieved_docs = [doc['metadata']['text'] for doc in res]
+            print(res)
+            print("---------------------")
+            print("---------------------")
+            # print(retrieved_docs)
+            
+            
+            return  res
         except Exception as e:
             raise RuntimeError(f"An error occurred while deleting document: {e}")
