@@ -32,10 +32,12 @@ The project is an AI-driven solution that optimizes the use of Language Models (
    cd your-repository
    ```
 2. **Set Up Virtual Environment**
+
    ```sh
-   python3 -m venv venv
+      python3 -m venv .venv
    . .venv/bin/activate
    ```
+
 3. **Install Requirements**
    ```sh
    pip install -r requirements.txt
