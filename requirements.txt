@@ -1,4 +1,8 @@
+Flask
 langchain
 openai
 python-dotenv
-Flask
+langchain-community
+pypdf
+langchain-openai
+langchain-chroma
