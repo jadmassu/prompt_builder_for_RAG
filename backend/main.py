@@ -1,6 +1,8 @@
 from flask import Flask,request,jsonify
+import os, sys
+rpath = os.path.abspath('/home/user/Documents/10/w7/PromptBuilder for RAG')
 from controller import controller
-
+from werkzeug.exceptions import InternalServerError
 app = Flask(__name__)
 
 @app.route("/generatePrompt",methods=[ 'POST',"GET"])
@@ -10,16 +12,16 @@ def generate_prompt():
             prompt = request.get_json()
             if 'question' not in prompt:
                 return jsonify({"error": "Question not found in the request."}), 400
-            
+            question = prompt['question']
             # Check if the question is empty
-            if not prompt['question']:
+            if not question:
                 return jsonify({"error": "Question cannot be empty."}), 400
-
-            # Send the non-empty prompt to the controller
-            response = controller(prompt['question'])
             
+            # Send the non-empty prompt to the controller
+            response = controller.controller(question)
             return jsonify(response), 200
         else:
             return 'Hello, World!'
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+         print(f"An error occurred while storing and loading Chroma DB: {e}")
+         raise InternalServerError(description="An internal server error occurred")

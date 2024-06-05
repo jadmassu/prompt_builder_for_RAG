@@ -7,14 +7,15 @@ class ChromaDBManager:
     def __init__(self, persist_directory='./data',):
         self.persist_directory = persist_directory
         self.db = None
+        self.retriever = None
 
     def store_and_load_chroma_db(self, docs):
         try:
             embedding_function = OpenAIEmbeddings()
             persistent_client = chromadb.PersistentClient()
             # Store and load Chroma DB from disk
-            db = Chroma.from_documents(docs, embedding_function, persist_directory=self.persist_directory,client=persistent_client,collection_name="biography")
-            return db
+            self.db = Chroma.from_documents(docs, embedding_function,collection_name="biography", persist_directory=self.persist_directory,client=persistent_client)
+            return self.db
         except Exception as e:
             raise RuntimeError(f"An error occurred while storing and loading Chroma DB: {e}")
 
@@ -52,3 +53,18 @@ class ChromaDBManager:
         except Exception as e:
             raise RuntimeError(f"An error occurred while deleting document: {e}")
 
+    def createRag(self):
+        try:
+            self.retriever = self.db.as_retriever(
+             search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
+                )
+            # self.db.as_retriever()
+            return self.retriever
+        except Exception as e:
+            raise RuntimeError(f"An error occurred while deleting document: {e}")
+        
+    def invokeRag(self, question):
+        try:
+            return  self.retriever.invoke(question)
+        except Exception as e:
+            raise RuntimeError(f"An error occurred while deleting document: {e}")
