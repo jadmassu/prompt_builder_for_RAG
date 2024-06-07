@@ -21,7 +21,10 @@ class RAGProcessor:
 
     def generate_prompt_template(self):
         try:
-            template = """Create a question based only on the following context, please respond with 'I don't know':
+            template = """
+            You are an expert LLM prompt writing service.
+            You take their prompt as input and output a better prompt based on your prompt writing expertise and the knowledge on the context. 
+            You must write 5 top prompts that can achieve their desired objective and expected outputs, please respond with 'I don't know':
             {question}
             Context:
             {context}

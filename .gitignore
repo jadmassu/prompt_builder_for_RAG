@@ -8,3 +8,11 @@ __pycache__/
 
 backend/chroma/
 notbook/chroma/
+
+
+
+# frontend
+frontend/node_modules
+/frontend/.next/
+/frontend/out/
+
