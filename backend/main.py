@@ -4,7 +4,14 @@ rpath = os.path.abspath('/home/user/Documents/10/w7/PromptBuilder for RAG')
 from controller import controller
 from werkzeug.exceptions import InternalServerError
 app = Flask(__name__)
+controller = controller.Controller()
 
+
+if __name__ == "__main__":
+    app = controller.init_process()
+    app.run(debug=True)
+    
+    
 @app.route("/generatePrompt",methods=[ 'POST',"GET"])
 def generate_prompt():
     try:
@@ -18,7 +25,7 @@ def generate_prompt():
                 return jsonify({"error": "Question cannot be empty."}), 400
             
             # Send the non-empty prompt to the controller
-            response = controller.controller(question)
+            response = controller.generate_prompt(question)
             return jsonify({"data": response}), 200
         else:
             return 'Hello, World!'

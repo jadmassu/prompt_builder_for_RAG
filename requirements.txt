@@ -6,3 +6,4 @@ langchain-community
 pypdf
 langchain-openai
 langchain-chroma
+ragas
