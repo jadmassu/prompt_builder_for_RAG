@@ -6,4 +6,4 @@ data/
 
 __pycache__/
 
-backend/chroma
+backend/chroma/

@@ -73,8 +73,9 @@ class ChromaDBManager:
             res = self.retriever.invoke(question)
             # retrieved_docs = [doc['metadata']['text'] for doc in res]
             print(res)
-            print("---------------------")
-            print("---------------------")
+            print(res["response"].content)
+            print(res["context"])
+            # print(retrieved_docs)
             # print(retrieved_docs)
             
             
