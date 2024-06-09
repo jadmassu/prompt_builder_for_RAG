@@ -42,6 +42,11 @@ The project is an AI-driven solution that optimizes the use of Language Models (
    ```sh
    pip install -r requirements.txt
    ```
+4. **Install Requirements**
+   ```sh
+   OPENAI_API_KEY = Your_open_api_key
+   PATH_TO_PDF = Your_file_Path
+   ```
 
 ## API Development
 
@@ -56,13 +61,15 @@ flask --app main run
 
     ├── backend
     │   ├── main.py               # API entry point
-    │   ├──
-    │   └── models
+    │   ├── controller
+    │   └── service
     ├── data
     │   ├── data       		  # Raw data files
     │   └──...
-    ├── Dockerfile                # Docker configuration
-    ├── docker-compose.yml        # Docker Compose configuration
+    ├── frontend
+    │   ├──
+    │   ├──
+    │   └──
     ├── requirements.txt          # Python dependencies
     ├── README.md                 # Project documentation
     └── ...
