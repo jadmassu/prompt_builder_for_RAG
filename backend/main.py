@@ -5,6 +5,8 @@ from controller import controller
 from werkzeug.exceptions import InternalServerError
 app = Flask(__name__)
 controller = controller.Controller()
+controller.init_process()
+
 
 
 if __name__ == "__main__":
@@ -32,3 +34,6 @@ def generate_prompt():
     except Exception as e:
          print(f"An error: {e}")
          raise InternalServerError(description="An internal server error occurred")
+
+    
+    
