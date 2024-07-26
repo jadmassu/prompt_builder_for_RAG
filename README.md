@@ -29,7 +29,7 @@ The project is an AI-driven solution that optimizes the use of Language Models (
 1. **Clone the Repository**
    ```sh
    git clone git@github.com:jadmassu/PromptBuilder-for-RAG.git
-   cd your-repository
+   cd PromptBuilder-for-RAG
    ```
 2. **Set Up Virtual Environment**
 
