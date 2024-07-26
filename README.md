@@ -5,8 +5,8 @@
 - [Project Overview](#project-overview)
 - [Tech Stack](#tech-stack)
 - [Setup Instructions](#setup-instructions)
-- [Usage](#usage)
 - [Project Structure](#project-structure)
+- [Key Features](#key-features)
 - [License](#license)
 
 ## Project Overview
@@ -76,7 +76,7 @@ npm run dev
 
 [http://localhost:3000](http://localhost:3000)
 
-## Code Structure
+## Project Structure
 
     ├── backend
     │   ├── main.py               # API entry point
@@ -92,6 +92,13 @@ npm run dev
     ├── requirements.txt          # Python dependencies
     ├── README.md                 # Project documentation
     └── ...
+
+## Key Features
+
+* Load & Chunk Data: Efficiently load and chunk large datasets for streamlined processing.
+* Embedding & Storage: Generate and store embeddings in ChromaDB for fast and scalable retrieval.
+* Query with Simplicity Search: Perform efficient queries using Simplarity search to find relevant information quickly.
+* Evaluate & Retrieve Prompts: Assess and retrieve prompts to improve the accuracy and relevance of responses.
 
 ### License
 
