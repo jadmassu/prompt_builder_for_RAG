@@ -7,6 +7,7 @@
 - [Setup Instructions](#setup-instructions)
 - [Project Structure](#project-structure)
 - [Key Features](#key-features)
+- [Screenshots](#screenshots)
 - [License](#license)
 
 ## Project Overview
@@ -99,6 +100,11 @@ npm run dev
 * Embedding & Storage: Generate and store embeddings in ChromaDB for fast and scalable retrieval.
 * Query with Simplicity Search: Perform efficient queries using Simplarity search to find relevant information quickly.
 * Evaluate & Retrieve Prompts: Assess and retrieve prompts to improve the accuracy and relevance of responses.
+
+## Screenshots
+
+![Screenshot from 2024-06-10 13-04-07](https://github.com/user-attachments/assets/7b98b2e5-8b0e-47e2-81ce-060a074696dc)
+
 
 ### License
 
