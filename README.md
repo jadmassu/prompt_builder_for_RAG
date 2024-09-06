@@ -28,7 +28,7 @@ The project is an AI-driven solution that optimizes the use of Language Models (
 
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/your-username/your-repository.git
+   git clone git@github.com:jadmassu/PromptBuilder-for-RAG.git
    cd your-repository
    ```
 2. **Set Up Virtual Environment**
@@ -38,11 +38,17 @@ The project is an AI-driven solution that optimizes the use of Language Models (
    . .venv/bin/activate
    ```
 
-3. **Install Requirements**
+3. **Install Backend Requirements**
+
    ```sh
    pip install -r requirements.txt
    ```
-4. **Install Requirements**
+
+4. **Install Frontend Modules**
+   ```sh
+   npm i
+   ```
+5. **SetUP environments**
    ```sh
    OPENAI_API_KEY = Your_open_api_key
    PATH_TO_PDF = Your_file_Path
@@ -57,19 +63,32 @@ cd backend
 flask --app main run
 ```
 
+## Frontend Development
+
+**Run Next Application**
+
+```sh
+cd frontend
+npm run dev
+```
+
+**Open with your browser to see the result.**
+
+[http://localhost:3000](http://localhost:3000)
+
 ## Code Structure
 
     ├── backend
     │   ├── main.py               # API entry point
-    │   ├── controller
-    │   └── service
+    │   ├── controller            # All the controllers
+    │   └── service               # All service that interact with outside
     ├── data
-    │   ├── data       		  # Raw data files
+    │   ├── data       		      # Raw data files
     │   └──...
     ├── frontend
-    │   ├──
-    │   ├──
-    │   └──
+    │   ├── public               # Static resource
+    │   ├── src                  # Contains all the components pages and styles
+    │   └── ...
     ├── requirements.txt          # Python dependencies
     ├── README.md                 # Project documentation
     └── ...

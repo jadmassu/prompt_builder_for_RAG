@@ -19,7 +19,7 @@ def generate_prompt():
             
             # Send the non-empty prompt to the controller
             response = controller.controller(question)
-            return jsonify(response), 200
+            return jsonify({"data": response}), 200
         else:
             return 'Hello, World!'
     except Exception as e:

@@ -5,7 +5,7 @@ from langchain_core.runnables import RunnablePassthrough
 def generate_prompt_template():
     try:
         template = """
-        Create a question based only on the following context, please respond with 'I don't know':
+        Create a prompt based only on the following context, please respond with 'I don't know':
         "context":"{context}"
        
         "user", "{input}"

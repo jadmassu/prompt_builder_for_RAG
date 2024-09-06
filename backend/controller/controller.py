@@ -22,7 +22,7 @@ def controller(prompt):
       
         rag_processor.process_rag_chain()
         res = rag_processor.invoker(prompt)
-        print(res["response"].content)
+        print(res)
         return res["response"].content
     except Exception as e:
         raise RuntimeError(f"error: {e}")
